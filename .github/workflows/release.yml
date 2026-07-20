@@ -5,81 +5,78 @@ on:
     tags:
       - "*"
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: "Log level"
-        required: true
-        default: "warning"
-        type: choice
-        options:
-          - info
-          - warning
-          - debug
 
 jobs:
-  flutter_build_ohos:
+  release_ohos:
     name: Release for ohos
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
       - name: Maximize build disk space
         uses: easimon/maximize-build-space@v10
+
       - name: Clone repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Extract tag name
         run: echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
         shell: bash
-      - name: Echo build progress
-        run: echo "PiliPlus_ohos_${{ env.tag }}_unsigned.hap build progress"
-        shell: bash
+
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y curl xz-utils zip libglu1-mesa
         shell: bash
+
       - name: Setup HarmonyOS toolchain
         uses: ErBWs/setup-ohos@v1
         with:
           version: latest
           cache: true
+
       - name: Setup JDK17
         uses: actions/setup-java@v4
         with:
           java-version: "17"
           distribution: "temurin"
+
       - name: Setup flutter-ohos
         run: |
           git clone -b oh-3.41.9-release https://gitcode.com/CPF-Flutter/flutter_flutter.git $GITHUB_WORKSPACE/flutter
           echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
         shell: bash
+
+      - name: Generate env.json
+        run: dart .vscode/build_env.dart "${{ env.tag }}"
+        shell: bash
+
       - name: Get Flutter dependencies
         run: flutter pub get
         shell: bash
         env:
           GIT_LFS_SKIP_SMUDGE: 1
-      - name: Set and Extract version
-        shell: pwsh
-        run: lib/scripts/build.ps1
-      - name: Generate env.json from build_env.dart
-        run: dart .vscode/build_env.dart "${{ env.tag }}"
-        shell: bash
+
       - name: Rename package
         run: |
           sed -i "s/name: PiliPlus/name: piliplus/g" pubspec.yaml
           find lib -type f -name "*.dart" -exec sed -i "s/import 'package:PiliPlus/import 'package:piliplus/g" {} \;
         shell: bash
+
       - name: Add ohos platform
         run: flutter create --platforms ohos .
         shell: bash
+
       - name: Build Flutter for ohos
-        run: flutter build hap --release --dart-define-from-file=pili_release.json --dart-define-from-file=.vscode/env.json
+        run: flutter build hap --release --dart-define-from-file=.vscode/env.json
         shell: bash
         continue-on-error: true
+
       - name: Package ohos build output
         run: cp ./ohos/entry/build/default/outputs/default/entry-default-unsigned.hap PiliPlus_ohos_${{ env.tag }}_unsigned.hap
         shell: bash
+
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
