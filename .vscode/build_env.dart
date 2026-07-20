@@ -49,7 +49,7 @@ Future<String> _getLatestTag() async {
 
 void main(List<String> args) async {
   // 硬编码的兜底 versionName
-  const hardcodedVersion = '2.0.1-ohos-3';
+  const hardcodedVersion = '2.0.1-ohos-5';
 
   // versionName 优先级：
   // 1. 传入的 tag 参数（命令行第一个参数）
