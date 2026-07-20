@@ -62,6 +62,9 @@ jobs:
       - name: Set and Extract version
         shell: pwsh
         run: lib/scripts/build.ps1
+      - name: Generate env.json from build_env.dart
+        run: dart .vscode/build_env.dart "${{ env.tag }}"
+        shell: bash
       - name: Rename package
         run: |
           sed -i "s/name: PiliPlus/name: piliplus/g" pubspec.yaml
@@ -71,7 +74,7 @@ jobs:
         run: flutter create --platforms ohos .
         shell: bash
       - name: Build Flutter for ohos
-        run: flutter build hap --release --dart-define-from-file=pili_release.json
+        run: flutter build hap --release --dart-define-from-file=pili_release.json --dart-define-from-file=.vscode/env.json
         shell: bash
         continue-on-error: true
       - name: Package ohos build output
