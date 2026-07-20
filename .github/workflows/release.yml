@@ -18,7 +18,15 @@ jobs:
           fetch-depth: 0
 
       - name: Extract tag name
-        run: echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            tag="${GITHUB_REF#refs/tags/}"
+          else
+            tag="$(git describe --tags --abbrev=0 2>/dev/null || echo '')"
+          fi
+          # sanitize slashes in tag/branch name for filename use
+          tag="${tag//\//-}"
+          echo "tag=${tag}" >> $GITHUB_ENV
         shell: bash
 
       - name: Install dependencies
