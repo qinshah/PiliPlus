@@ -31,6 +31,8 @@ jobs:
 
       - name: Get Flutter dependencies
         run: flutter pub get
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
 
       - name: Dart Analyze
         run: dart analyze
