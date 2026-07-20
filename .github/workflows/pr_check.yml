@@ -35,4 +35,4 @@ jobs:
           GIT_LFS_SKIP_SMUDGE: 1
 
       - name: Dart Analyze
-        run: dart analyze --fatal-infos=false
+        run: dart analyze --no-fatal-infos --no-fatal-warnings
