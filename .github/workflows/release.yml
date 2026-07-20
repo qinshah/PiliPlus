@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - name: Maximize build disk space
-        uses: easimon/maximize-build-space@v10
-
       - name: Clone repository
         uses: actions/checkout@v4
         with:
