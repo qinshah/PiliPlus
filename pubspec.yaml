@@ -89,7 +89,7 @@ dependencies:
   extended_nested_scroll_view:
     git:
       url: https://github.com/bggRGjQaUbCoE/extended_nested_scroll_view.git
-      ref: mod
+      ref: 161cd202c20bf0ba2394e3a86381d58864dc9e4e
   # 上拉加载
   # loading_more_list: ^7.1.0
   # 下拉刷新
@@ -100,12 +100,12 @@ dependencies:
   material_design_icons_flutter:
     git:
       url: https://github.com/bggRGjQaUbCoE/material_design_icons_flutter.git
-      ref: const
+      ref: 2bb68d1de3c7bb8c6117fce54d43da65a2387163
   # toast
   flutter_smart_dialog:
     git:
       url: https://github.com/bggRGjQaUbCoE/flutter_smart_dialog.git
-      ref: main
+      ref: 1dbede0ee22f161ec2c928e1e82f0ae9339a097d
   # 下滑关闭
   # dismissible_page: ^1.0.2
   # custom_sliding_segmented_control: ^1.8.4
@@ -119,10 +119,12 @@ dependencies:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./media_kit_video
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
   media_kit_libs_video:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./libs/universal/media_kit_libs_video
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
 
   # 媒体通知
   # audio_service: ^0.18.15
@@ -130,7 +132,7 @@ dependencies:
     git:
       url: https://gitcode.com/CPF-Flutter/fluttertpc_audio_service.git
       path: audio_service
-      ref: br_v0.18.18_ohos
+      ref: ac22654a6c8edc30b3d05fac4954de4b19ea85f1
   # audio_session: ^0.2.2
   audio_session:
     git:
@@ -149,6 +151,7 @@ dependencies:
   auto_orientation: # 自动旋转.鸿蒙适配
     git:
       url: "https://gitcode.com/CPF-Flutter/fluttertpc_auto_orientation"
+      ref: c01b9bf97ecbab58cd8bfc2af6cd7ab89af2452a
   protobuf: 6.0.0
   # animations: ^2.0.11
 
@@ -168,7 +171,7 @@ dependencies:
   canvas_danmaku:
     git:
       url: https://github.com/Starfallan/canvas_danmaku.git
-      ref: main
+      ref: 3947b1fec9d89a8bb11b6feda7a43787ed1e73a9
   # 状态栏图标控制
   # status_bar_control: ^3.2.1
   # 代理
@@ -220,12 +223,12 @@ dependencies:
   webdav_client:
     git:
       url: https://github.com/wgh136/webdav_client.git
-      ref: main
+      ref: 2f669c98fb81cff1c64fee93466a1475c77e4273
   re_highlight: 0.0.3
   flutter_sortable_wrap:
     git:
       url: https://github.com/bggRGjQaUbCoE/flutter_sortable_wrap.git
-      ref: master
+      ref: ed2d47c7a8cc0d218bc322ab770fd19c0b56a863
   web_socket_channel: 3.0.3
   # image: ^4.7.1
   # window_manager: ^0.5.1
@@ -233,17 +236,17 @@ dependencies:
     git:
       url: https://github.com/bggRGjQaUbCoE/window_manager.git
       path: packages/window_manager
-      ref: main
+      ref: 974ab0a71d37cfca9d9bd5b295d7bd1df80b790b
   tray_manager: 0.5.3
   # file_picker: ^10.3.3
   file_picker:
     git:
       url: https://gitcode.com/CPF-Flutter/fluttertpc_file_picker.git
-      ref: br_v10.2.0_ohos
+      ref: aae2f8828ea4d631362d6252e78d2773412747ff
   super_sliver_list:
     git:
       url: https://github.com/bggRGjQaUbCoE/super_sliver_list.git
-      ref: mod
+      ref: 71f34fa179e2d05818004e22e632dd59f2a223be
   dlna_dart: 0.1.1
   battery_plus: 7.1.0
   battery_plus_ohos: 0.0.3
@@ -270,35 +273,37 @@ dependency_overrides:
     git:
       url: https://gitcode.com/CPF-Flutter/flutter_plus_plugins.git
       path: packages/device_info_plus/device_info_plus
+      ref: b9b7a5819ac8aa009e0516f98e3aad8d132bd381
   flutter_inappwebview:
     git:
       url: "https://gitcode.com/CPF-Flutter/flutter_inappwebview.git"
       path: "flutter_inappwebview"
-      ref: br_v6.1.5_ohos
+      ref: aaebf895abbf824ef295c446f7210e17bebcea02
   flutter_inappwebview_platform_interface:
     git:
       url: "https://gitcode.com/CPF-Flutter/flutter_inappwebview.git"
       path: "flutter_inappwebview_platform_interface"
-      ref: "br_v6.1.5_ohos"
+      ref: aaebf895abbf824ef295c446f7210e17bebcea02
   video_player: # 视频播放器.鸿蒙适配
     git:
       url: https://gitcode.com/openharmony-tpc/flutter_packages.git
       path: packages/video_player/video_player
-      ref: br_video_player-v2.9.2_ohos
+      ref: 8afaaf75836d9ee21bef68b165db7a9dce607774
   url_launcher: # 打开链接.鸿蒙适配
     git:
       url: https://gitcode.com/openharmony-tpc/flutter_packages.git
       path: packages/url_launcher/url_launcher
-      ref: br_url_launcher_v6.3.1_ohos
+      ref: 9cf613d22398d9138e8bc7bbf270444518db585e
   path_provider: # 应用可用路径.鸿蒙适配
     git:
       url: "https://gitcode.com/openharmony-tpc/flutter_packages.git"
       path: "packages/path_provider/path_provider"
+      ref: 0bc98e19b5c779df108e50ebb8c90554be6bbf88
   share_plus: # 分享.鸿蒙适配
     git:
       url: https://gitcode.com/CPF-Flutter/flutter_plus_plugins.git
       path: packages/share_plus/share_plus
-      ref: br_share_plus-v10.1.1_ohos
+      ref: 55de300a8627c55cd45ac86e6a26bcae8e0ca4cf
   path: 1.9.1
   mime: 2.0.0
   rxdart: 0.28.0
@@ -306,22 +311,27 @@ dependency_overrides:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./media_kit
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
   media_kit_libs_linux:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./libs/linux/media_kit_libs_linux
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
   media_kit_libs_ios_video:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./libs/ios/media_kit_libs_ios_video
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
   media_kit_libs_macos_video:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./libs/macos/media_kit_libs_macos_video
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
   media_kit_libs_ohos:
     git:
       url: https://github.com/Predidit/media-kit.git
       path: ./libs/ohos/media_kit_libs_ohos
+      ref: 652cfc765a43792be8bec429ea72296d5d96fb7d
   # media_kit_libs_android_video:
   #   git:
   #     url: https://github.com/Predidit/media-kit.git
@@ -336,31 +346,31 @@ dependency_overrides:
     git:
       url: https://github.com/My-Responsitories/media-kit.git
       path: media_kit_native_event_loop
-      ref: version_1.2.5
+      ref: deac6b62569584b6a5e28e6c60c187a0a7281b3a
   media_kit_libs_android_video:
     git:
       url: https://github.com/My-Responsitories/media-kit.git
       path: libs/android/media_kit_libs_android_video
-      ref: version_1.2.5
+      ref: deac6b62569584b6a5e28e6c60c187a0a7281b3a
   media_kit_libs_windows_video:
     git:
       url: https://github.com/My-Responsitories/media-kit.git
       path: libs/windows/media_kit_libs_windows_video
-      ref: version_1.2.5
+      ref: deac6b62569584b6a5e28e6c60c187a0a7281b3a
   font_awesome_flutter: 10.9.0
   image_picker:
     git:
       url: https://gitcode.com/CPF-Flutter/flutter_packages.git
       path: packages/image_picker/image_picker
-      ref: br_image_picker-v1.1.2_ohos
+      ref: 378ac72ebcedcd9ebf327c4778f6c28228880dcb
   win32: 5.5.3
   js: 0.7.0
   # image_cropper 鸿蒙化适配
   image_cropper:
-    git: 
+    git:
       url: https://gitcode.com/CPF-Flutter/fluttertpc_image_cropper.git
       path: ./image_cropper
-      ref: br_v11.0.0_ohos
+      ref: 8c9100b106d32b5ee00834902d0c3728e2487f25
 
 dev_dependencies:
   flutter_test:
